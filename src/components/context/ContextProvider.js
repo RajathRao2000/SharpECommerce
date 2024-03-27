@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Variables } from "./Context";
+import { Variables } from "./Variables";
 
 function ContextProvider(props) {
   const [variables, setVariables] = useState({

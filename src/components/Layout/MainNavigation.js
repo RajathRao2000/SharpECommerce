@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
 import { useContext, useState } from "react";
-import { Variables } from "../context/Context";
+import { Variables } from "../context/Variables";
 
 const MainNavigation = () => {
   const { clearToken, apiToken } = useContext(Variables);
@@ -19,7 +19,6 @@ const MainNavigation = () => {
               <li>
                 <Link to="/profile">Profile</Link>
               </li>
-
               <li>
                 <button onClick={clearToken}>Logout</button>
               </li>

@@ -2,13 +2,15 @@ import { useState, useRef, useContext } from "react";
 
 import classes from "./AuthForm.module.css";
 import googleApiKey from "../../keys";
-import { Variables } from "../context/Context";
+import { Variables } from "../context/Variables";
+import { useHistory } from "react-router";
 
 const AuthForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const history = useHistory()
 
   const { apiToken, setToken } = useContext(Variables);
 
@@ -39,6 +41,7 @@ const AuthForm = () => {
       ).then((res) => {
         setIsLoading(false);
         if (res.ok) {
+          history.replace("/profile")
           res.json().then((res) => {
             setToken(res.idToken);
           });
