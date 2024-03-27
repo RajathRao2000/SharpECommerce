@@ -1,24 +1,36 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import classes from './MainNavigation.module.css';
+import classes from "./MainNavigation.module.css";
+import { useContext, useState } from "react";
+import { Variables } from "../context/Context";
 
 const MainNavigation = () => {
+  const { clearToken, apiToken } = useContext(Variables);
+
   return (
     <header className={classes.header}>
-      <Link to='/'>
+      <Link to="/">
         <div className={classes.logo}>React Auth</div>
       </Link>
       <nav>
         <ul>
-          <li>
-            <Link to='/auth'>Login</Link>
-          </li>
-          <li>
-            <Link to='/profile'>Profile</Link>
-          </li>
-          <li>
-            <button>Logout</button>
-          </li>
+          {apiToken ? (
+            <>
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+
+              <li>
+                <button onClick={clearToken}>Logout</button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link to="/auth">Login</Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </header>

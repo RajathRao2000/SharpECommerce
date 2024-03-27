@@ -1,7 +1,8 @@
-import { useState, useRef } from "react"; 
+import { useState, useRef, useContext } from "react";
 
 import classes from "./AuthForm.module.css";
 import googleApiKey from "../../keys";
+import { Variables } from "../context/Context";
 
 const AuthForm = () => {
   const emailInputRef = useRef();
@@ -9,18 +10,46 @@ const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
+  const { apiToken, setToken } = useContext(Variables);
+
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
 
   const submitHandler = (e) => {
-    console.log("here");
     setIsLoading(true);
     e.preventDefault();
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
 
     if (isLogin) {
+      fetch(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${googleApiKey}`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            email: enteredEmail,
+            password: enteredPassword,
+            returnSecureToken: true,
+          }),
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      ).then((res) => {
+        setIsLoading(false);
+        if (res.ok) {
+          res.json().then((res) => {
+            setToken(res.idToken);
+          });
+        } else {
+          return res.json().then((data) => {
+            //show an error modal
+            alert(data.error.message);
+            console.log(data);
+          });
+        }
+      });
     } else {
       fetch(
         `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${googleApiKey}`,
@@ -43,7 +72,7 @@ const AuthForm = () => {
         } else {
           return res.json().then((data) => {
             //show an error modal
-            alert(data.error.message)
+            alert(data.error.message);
             console.log(data);
           });
         }
@@ -70,7 +99,9 @@ const AuthForm = () => {
         </div>
         <div className={classes.actions}>
           {isLoading ? (
-            <button style={{backgroundColor:"black"}} disabled={true}>Sending Request...</button>
+            <button style={{ backgroundColor: "black" }} disabled={true}>
+              Sending Request...
+            </button>
           ) : (
             <button>{isLogin ? "Login" : "Create Account"}</button>
           )}
