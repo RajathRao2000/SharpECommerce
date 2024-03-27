@@ -1,0 +1,36 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 10px;
+  border: 1px solid #212529;
+  color: #212529;
+}
+
+.contact-form > h2 {
+  align-self: center;
+}
+
+.contact-form > input {
+  padding: 5px;
+  border-radius: 7px;
+  border: 1px solid;
+}
+
+.contact-form > button {
+  padding: 5px;
+  width: 100px;
+  border-radius: 7px;
+  align-self: center;
+}
+
+.contact-section {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
+  height: 100%;
+}

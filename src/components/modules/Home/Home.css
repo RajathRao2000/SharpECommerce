@@ -1,0 +1,13 @@
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+#tours>h2{
+    font-family: "Metal Mania";
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}

@@ -1,0 +1,18 @@
+/* star */
+
+
+.rating{
+    /* border: solid; */
+    width: 300px;
+    
+}
+
+.star{
+  width:30px;
+  height: 30px;
+}
+
+.star.active{
+  filter: invert(81%) sepia(52%) saturate(4575%) hue-rotate(9deg) brightness(119%) contrast(101%);
+
+}

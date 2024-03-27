@@ -1,0 +1,17 @@
+.cart-background {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.cart-container {
+  position: fixed;
+  background-color: white;
+  width: 400px;
+  height: 100vh;
+  padding: 20px;
+  z-index: 1;
+  border: 1px solid rgb(177, 103, 103);
+  top: 80px;
+  float: right;
+}

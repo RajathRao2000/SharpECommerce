@@ -1,0 +1,9 @@
+.product-navlink {
+  text-decoration: none;
+  margin: 20px;
+}
+
+.product-navlink:hover {
+  transition: 0.5s all ease-in-out;
+  transform: scale(1.1);
+}

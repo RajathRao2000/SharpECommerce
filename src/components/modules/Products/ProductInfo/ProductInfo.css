@@ -1,0 +1,108 @@
+#product-details {
+  margin: 20px;
+  /* background-color:blanchedalmond; */
+  padding: 20px;
+  /* min-width: 900px; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.line{
+  /* height: 100%; */
+  border: solid 1px gainsboro;
+  /* width: 1px; */
+}
+
+#review-details{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:10px;
+  /* border: solid; */
+}
+
+.reviews {
+  margin: 20px;
+  /* background-color:blanchedalmond; */
+  padding: 20px;
+  /* min-width: 900px;
+  width: 1000px; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border: solid; */
+}
+
+.product-img {
+  display: flex;
+  /* background-color: aliceblue; */
+  border-radius: 10px;
+  max-width: 500px;
+  height: max-content;
+  padding: 20px;
+}
+
+
+.thumb {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.display-img {
+  width: 100%;
+  padding: 10px;
+}
+
+.display-img > img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.thumb > img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.thumb > img:hover {
+  cursor: pointer;
+  filter: brightness(80%);
+}
+
+.imageanddetails {
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+  /* border: solid; */
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+
+.product-details{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  /* background-color: aliceblue; */
+  /* border-radius: 10px; */
+  max-width: 300px;
+  /* border-left: solid 1px; */
+}
+
+.price{
+  display: flex;
+  /* border: solid; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+}

@@ -1,0 +1,96 @@
+#head-components{
+  width: 100%;
+}
+
+.header {
+  background-color: black;
+  /* position: fixed; */
+  width: 100%;
+  z-index: 1;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav-btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: solid 1px #56ccf2;
+  padding: 5px 20px;
+}
+
+#nav-btn:hover {
+  background-color: #56ccf2;
+  border: solid 1px black;
+}
+
+.cart-count {
+  /* position: fixed; */
+  /* top: 1px;
+  right: 1px;
+  border-radius: 50%; */
+  border-radius: 5px;
+  padding: 2px 9px;
+margin-left: 10px;
+  color: #56ccf2;
+  border: 1px solid #56ccf2;
+  background-color: black;
+  font-size: small;
+}
+
+.banner > p {
+  padding: 40px;
+  font-size: 100px;
+}
+
+.banner {
+  text-align: center;
+  margin: 0;
+  padding: 0px;
+  padding-bottom: 30px;
+  background: #777;
+  color: white;
+  width: 100%;
+}
+
+.banner > .latest-album {
+  display: block;
+  border: 1px solid #56ccf2;
+  padding: 15px 30px;
+  font-size: 23px;
+  font-weight: 200;
+  margin: 10px auto;
+  background: inherit;
+  cursor: pointer;
+  color: white;
+}
+
+.banner > .play-btn {
+  cursor: pointer;
+  display: block;
+  border: 2px solid #56ccf2;
+  border-radius: 50%;
+  padding: 20px 30px;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px auto;
+  background: inherit;
+  color: #56ccf2;
+}
+
+.nav-link-group{
+  display: flex;
+  gap: 20px;
+  color: white;
+  flex-direction: row;
+
+}
+
+.nav-link-group>a{
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link-group>a.active{
+  border-bottom: 2px solid white;
+}

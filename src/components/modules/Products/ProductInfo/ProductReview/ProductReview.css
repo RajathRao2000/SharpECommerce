@@ -1,0 +1,25 @@
+.review-container{
+    /* background-color: aliceblue; */
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.review-container>.review{
+    padding: 10px 0;
+    /* background-color: white; */
+    /* border-radius: 10px; */
+    border-bottom: solid 1px;
+
+}
+
+.review-container>.review-date{
+    font-style: italic;
+    font-size: small;
+}
+
+.reviews{
+    width: 1000px;
+}
