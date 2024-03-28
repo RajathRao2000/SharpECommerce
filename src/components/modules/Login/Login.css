@@ -1,0 +1,17 @@
+.login-form{
+    padding: 20px;
+    width: 500px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: solid 1px gainsboro;
+
+}
+
+.login{
+    /* border: solid; */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    height: max-content;
+
+}

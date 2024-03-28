@@ -9,6 +9,7 @@ import Home from "./components/modules/Home/Home";
 import ContactUs from "./components/modules/ContactUs/ContactUs";
 import ProductList from "./components/modules/Products/ProductList/ProductList";
 import ProductInfo from "./components/modules/Products/ProductInfo/ProductInfo";
+import Login from "./components/modules/Login/Login";
 
 
 // const router = createBrowserRouter([
@@ -28,8 +29,13 @@ function App() {
     <Switch >
     <VariablesProvider>
       {/* <RouterProvider router={router}></RouterProvider> */}
+      
       <Redirect exact from="/" to="/home" />
+
       <Header />
+      <Route path="/login" >
+        <Login />
+      </Route>
       <Route path="/home" >
         <Home />
       </Route>

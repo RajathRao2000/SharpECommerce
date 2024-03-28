@@ -6,4 +6,7 @@ export const Variables = createContext({
   toursList: [],
   removeItem: () => {},
   addItem: () => {},
+  apiToken: "",
+  setToken: () => {},
+  clearToken: () => {},
 });

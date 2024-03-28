@@ -20,10 +20,12 @@ export const Header = () => {
       <header className="header">
         <div>{/*This div is to center the navlinks*/}Be Unique</div>
         <nav className="nav-link-group">
-          <NavLink to="/about" className={`${isActive=>(isActive?"active":"")}`}> ABOUT</NavLink>
+
           <NavLink to="/home"className={`${isActive=>(isActive?"active":"")}`}> HOME</NavLink>
           <NavLink to="/product"className={`${isActive=>(isActive?"active":"")}`}> STORE</NavLink>
           <NavLink to="/contactus"className={`${isActive=>(isActive?"active":"")}`}> CONTACT US</NavLink>
+          <NavLink to="/about" className={`${isActive=>(isActive?"active":"")}`}> ABOUT</NavLink>
+          <NavLink to="/login" className={`${isActive=>(isActive?"active":"")}`}> LOGIN</NavLink>
         </nav>
         <Button
           id="nav-btn"
