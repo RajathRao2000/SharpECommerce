@@ -43,6 +43,7 @@ const AuthForm = () => {
         if (res.ok) {
           history.replace("/profile")
           res.json().then((res) => {
+            // console.log("idtoken",res.idToken)
             setToken(res.idToken);
           });
         } else {
@@ -69,7 +70,7 @@ const AuthForm = () => {
         }
       ).then((res) => {
         setIsLoading(false);
-
+        
         if (res.ok) {
           //...
         } else {

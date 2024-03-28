@@ -21,6 +21,7 @@ const MainNavigation = () => {
       </Link>
       <nav>
         <ul>
+          {/* {console.log("mainnav",apiToken)} */}
           {apiToken ? (
             <>
               <li>
