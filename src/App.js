@@ -1,5 +1,5 @@
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Redirect, Route, Switch} from "react-router-dom"
+import { Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/UI/Header/Header";
 import Products from "./components/modules/Products/Products";
@@ -10,7 +10,6 @@ import ContactUs from "./components/modules/ContactUs/ContactUs";
 import ProductList from "./components/modules/Products/ProductList/ProductList";
 import ProductInfo from "./components/modules/Products/ProductInfo/ProductInfo";
 import Login from "./components/modules/Login/Login";
-
 
 // const router = createBrowserRouter([
 //   {
@@ -26,35 +25,34 @@ import Login from "./components/modules/Login/Login";
 // ]);
 function App() {
   return (
-    <Switch >
-    <VariablesProvider>
-      {/* <RouterProvider router={router}></RouterProvider> */}
-      
-      <Redirect exact from="/" to="/home" />
+    <Switch>
+      <VariablesProvider>
+        {/* <RouterProvider router={router}></RouterProvider> */}
 
-      <Header />
-      <Route path="/login" >
-        <Login />
-      </Route>
-      <Route path="/home" >
-        <Home />
-      </Route>
-      <Route path="/about" >
-        <About />
-      </Route>
-      <Route path="/contactus" >
-        <ContactUs />
-      </Route>
-      <Route path="/product" exact>
-        <Products />
-      </Route>
-      <Route path="/product/:categoryname" exact>
-        <ProductList />
-      </Route>
-      <Route path="/product/:categoryname/:productid">
-        <ProductInfo />
-      </Route>
-    </VariablesProvider>
+        <Redirect exact from="/" to="/home" />
+        <Header />
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/contactus">
+          <ContactUs />
+        </Route>
+        <Route path="/product" exact>
+          <Products />
+        </Route>
+        <Route path="/product/:categoryname" exact>
+          <ProductList />
+        </Route>
+        <Route path="/product/:categoryname/:productid">
+          <ProductInfo />
+        </Route>
+      </VariablesProvider>
     </Switch>
   );
 }

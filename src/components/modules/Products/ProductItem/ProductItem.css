@@ -1,9 +1,32 @@
 .product-navlink {
   text-decoration: none;
   margin: 20px;
+  padding: 0;
 }
 
 .product-navlink:hover {
-  transition: 0.5s all ease-in-out;
-  transform: scale(1.1);
+  /* transition: 0.5s all ease-in-out;
+  transform: scale(1.1); */
+}
+
+.product-card-body>a{
+  text-decoration: none;
+  color: black;
+}
+
+.product-card-body{
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  align-items: center;
+}
+
+.addToCart-btn{
+  padding: 30px 50px;
+
+}
+
+.product-item-img:hover{
+  /* transition: 0.1s all ease-in-out;
+  transform: scale(1.1); */
 }

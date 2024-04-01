@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Login.css";
@@ -12,6 +12,13 @@ function Login() {
 //   console.log(enteredEmail.current.value,enteredPassword)
   const history = useHistory();
   const {setToken,apiToken}=useContext(Variables)
+
+    useEffect(()=>{
+        if(apiToken){
+            history.replace("/product")
+        }
+    },[apiToken])
+
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -31,11 +38,12 @@ function Login() {
     ).then((res) => {
       //   setIsLoading(false);
       if (res.ok) {
-        history.replace("/product");
         res.json().then((res) => {
-          // console.log("idtoken",res.idToken)
-          setToken(res.idToken);
-        });
+            // console.log("idtoken",res.idToken)
+            setToken(res.idToken,enteredEmail.current.value);
+          });
+
+
       } else {
         return res.json().then((data) => {
           //show an error modal

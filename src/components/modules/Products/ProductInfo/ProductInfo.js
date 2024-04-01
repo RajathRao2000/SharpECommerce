@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { baseUrl } from "../../../../keys";
 
@@ -7,11 +7,13 @@ import "./ProductInfo.css";
 import { Button } from "react-bootstrap";
 import Rating from "./Rating/Rating";
 import ProductReview from "./ProductReview/ProductReview";
+import { Variables } from "../../../store/Variables";
 
 function ProductInfo() {
   const [productInfo, setProductInfo] = useState("");
   const [mainImage, setMainImage] = useState("");
   const { pathname } = useLocation();
+  const { addItem } = useContext(Variables);
   const id = pathname.split("/")[3];
 
   const fetchProductInfo = async () => {
@@ -44,6 +46,7 @@ function ProductInfo() {
               {Object.keys(images).map((ele) => {
                 return (
                   <img
+                    key={Math.random()}
                     className="item"
                     onClick={() => {
                       setMainImage(images[ele]);
@@ -62,7 +65,6 @@ function ProductInfo() {
           <div className="product-details">
             <p className="category">{category}</p>
             <h3 className="title">{title}</h3>
-
             <Rating />
             <p className="price">
               <div>
@@ -71,7 +73,13 @@ function ProductInfo() {
                 </p>
                 Rs {price}
               </div>
-              <Button variant="primary">Add to Cart</Button>
+              {console.log(title, price, main,id, "||")}
+              <Button
+                onClick={() => addItem(title, price, main, id)}
+                variant="primary"
+              >
+                Add to Cart
+              </Button>
             </p>
             <div className="description">
               <h5>Description:</h5>
@@ -80,7 +88,6 @@ function ProductInfo() {
           </div>
         </div>
       </section>
-
       <section id="review-details">
         <div className="reviews">
           <h1>Reviews</h1>

@@ -1,7 +1,7 @@
-.cart-background {
+/* .cart-background {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .cart-container {
@@ -14,4 +14,49 @@
   border: 1px solid rgb(177, 103, 103);
   top: 80px;
   float: right;
+} */
+
+.cart-background{
+  position: fixed;
+  z-index: 1;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* border: solid; */
+  background-color: transparent;
+
+}
+
+.cart-container{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  height: 500px; 
+  gap: 20px; 
+}
+
+.cart-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* border: solid; */
+}
+
+.cart-list{
+  width: 100%;
+  border-top: solid 1px gainsboro;
+  border-bottom: solid 1px gainsboro;
+  overflow: auto;
+
+}
+
+.total{
+  border: 2px solid;
+  width: 100%
 }

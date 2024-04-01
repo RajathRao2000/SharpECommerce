@@ -3,35 +3,45 @@ import { Button } from "react-bootstrap";
 import "./CartItem.css";
 import { useState, useContext } from "react";
 import { Variables } from "../../../store/Variables";
+import thrash from "./trash-svgrepo-com.svg";
 
 function CartItem(props) {
-  const _Variables = useContext(Variables);
-  const { title, price, imageUrl, quantity } = props;
-  const [quant, setQuant] = useState(quantity);
-  const handleOnChange = (e) => {
-    setQuant(e.target.value);
-  };
+  const {removeItem} = useContext(Variables);
+  const { title, price, imageUrl, quantity, id } = props;
+  // const [quant, setQuant] = useState(quantity);
+  // const handleOnChange = (e) => {
+  //   setQuant(e.target.value);
+  // };
+
+  const handleOnBlur=()=>{
+
+  }
 
   return (
-    <div className="cart-list">
-      <div className="cart-item">
-        <div className="cart-img">
-          <img src={imageUrl} />
-        </div>
-        <div className="cart-item-name">{title}</div>
+    <div className="cart-item">
+      <div className="cart-img">
+        <img src={imageUrl} />
       </div>
-      <div className="price">{price}</div>
-      <div className="quantity">
+      <div className="cart-item-info">
+        <div className="cart-item-name">
+          <p>{title.slice(0,21)}...</p>
+        </div>
+        <div className="cart-price-quantity">
+        Rs {price}
         <input
-          type="text"
-          className="quantity"
-          value={quant}
-          onChange={(e) => {
-            handleOnChange(e);
-          }}
+          type="number"
+          className="input-quantity"
+          value={quantity}
+          // onChange={(e) => {
+          //   handleOnChange(e);
+          // }}
+          onBlur={handleOnBlur}
         />
-        <Button variant="danger" onClick={() => _Variables.removeItem(title)}>
-          REMOVE
+        </div>
+      </div>
+      <div className="cart-thrash-btn">
+        <Button variant="danger" onClick={() => removeItem(title,id)}>
+          <img className="thrash-img" src={thrash} />
         </Button>
       </div>
     </div>
